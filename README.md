@@ -130,4 +130,9 @@ Found a bug or want to contribute? Open an issue or pull request!
 
 ### Support
 For questions specific to this configuration, open an issue on this repository.
-For general Marlin support, visit the [Marlin Documentation](https://marlinfw.org/).   
+For general Marlin support, visit the [Marlin Documentation](https://marlinfw.org/).
+
+
+## Monotoba fork: BLTouch installation research
+
+This fork includes a [board-specific LK4/LK5 BLTouch installation and recovery guide](docs/BLTOUCH-LK-SERIES-GUIDE.md) with PWM and connector-release figures, and [read-only firmware backup tooling](tools/backup/README.md). The proposed Robin E3 V1.1 ESTOP/PB1 and Z-STOP/PC6 installation has **not yet been printer-verified**; do not flash firmware or home Z based solely on a source-code review. See [readme-fork.md](readme-fork.md) and [CHANGELOG.md](CHANGELOG.md).
