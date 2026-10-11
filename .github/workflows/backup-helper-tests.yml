@@ -1,0 +1,31 @@
+name: Read-only backup helper tests
+
+on:
+  push:
+    paths:
+      - 'tools/backup/**'
+      - 'tests/test_backup_readonly.py'
+      - '.github/workflows/backup-helper-tests.yml'
+  pull_request:
+    paths:
+      - 'tools/backup/**'
+      - 'tests/test_backup_readonly.py'
+      - '.github/workflows/backup-helper-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static and unit tests (no hardware required)
+        run: |
+          python -m py_compile tools/backup/backup_readonly.py
+          python -m unittest discover -s tests -p test_backup_readonly.py -v
+          python tools/backup/backup_readonly.py --board robin-e3-v1.1 --output /tmp/dry-run
