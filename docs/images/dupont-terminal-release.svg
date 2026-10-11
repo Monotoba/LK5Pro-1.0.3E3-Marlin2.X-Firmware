@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" role="img" aria-labelledby="title desc">
+<title id="title">Depinning a three-position Dupont-style connector</title>
+<desc id="desc">Illustrative two latch designs, plastic lift latch and metal tang press latch. Indicates the correct small tool action and pulling the crimped terminal toward the wire end.</desc>
+<rect width="1100" height="480" fill="white"/>
+<g font-family="DejaVu Sans,Arial,sans-serif" fill="#153448">
+<text x="45" y="49" font-size="29" font-weight="700">Removing a connector contact without cutting the wire</text>
+<text x="45" y="77" font-size="17">Unplug everything first. Identify which retention design your housing uses; use minimal force.</text>
+<g transform="translate(45 115)">
+<rect x="0" y="0" width="492" height="305" rx="13" fill="#f3f7fa" stroke="#d1dce2"/>
+<text x="19" y="35" font-size="21" font-weight="700">A. Molded plastic latch</text>
+<text x="19" y="58" font-size="15">Lift the plastic finger away from the contact.</text>
+<rect x="135" y="119" width="280" height="78" rx="7" fill="#24272d"/>
+<rect x="174" y="151" width="188" height="17" rx="3" fill="#a4b2be"/>
+<rect x="134" y="157" width="65" height="8" fill="#d25353"/>
+<path d="M252 119L268 101L298 101L309 119" fill="#24272d" stroke="#24272d" stroke-width="5"/>
+<path d="M285 96L306 66" stroke="#c65b26" stroke-width="5"/>
+<path d="M300 69L306 63L310 75" fill="none" stroke="#c65b26" stroke-width="3"/>
+<text x="320" y="81" fill="#a85016" font-size="16">Lift gently ↑</text>
+<path d="M185 177H75" stroke="#b93636" stroke-width="4"/>
+<path d="M87 169L73 177L87 185" fill="none" stroke="#b93636" stroke-width="4"/>
+<text x="17" y="229" font-size="17">Pull wire backward only after latch releases.</text>
+<text x="17" y="256" font-size="15" fill="#566675">The latch is part of the plastic housing.</text>
+</g>
+<g transform="translate(560 115)">
+<rect x="0" y="0" width="492" height="305" rx="13" fill="#f3f7fa" stroke="#d1dce2"/>
+<text x="19" y="35" font-size="21" font-weight="700">B. Spring-metal retaining tang</text>
+<text x="19" y="58" font-size="15">Depress the raised metal tang into the contact.</text>
+<rect x="135" y="119" width="280" height="78" rx="7" fill="#24272d"/>
+<rect x="174" y="147" width="188" height="20" rx="3" fill="#b1bec6"/>
+<rect x="134" y="154" width="65" height="8" fill="#d25353"/>
+<path d="M252 148L269 128L285 148" fill="#b1bec6" stroke="#edf2f4" stroke-width="2"/>
+<path d="M271 92V125" stroke="#c65b26" stroke-width="5"/>
+<path d="M261 112L271 127L281 112" fill="none" stroke="#c65b26" stroke-width="3"/>
+<text x="295" y="94" fill="#a85016" font-size="16">Press inward ↓</text>
+<path d="M185 177H75" stroke="#b93636" stroke-width="4"/>
+<path d="M87 169L73 177L87 185" fill="none" stroke="#b93636" stroke-width="4"/>
+<text x="17" y="229" font-size="17">Pull wire backward only after tang releases.</text>
+<text x="17" y="256" font-size="15" fill="#566675">The tang is part of the metal crimp terminal.</text>
+</g>
+<text x="46" y="461" font-size="16" fill="#465863">Schematic cross sections, not to scale. Never insert a metal pick into a powered connector.</text>
+</g>
+</svg>
