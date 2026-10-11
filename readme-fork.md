@@ -114,3 +114,7 @@ documented and attributed separately from upstream contributions.
   as part of this fork's initial documentation work.**
 
 For subsequent changes, consult [CHANGELOG.md](CHANGELOG.md).
+
+## Documentation and read-only backup tooling added 2026-10-11
+
+The [complete LK-series BLTouch installation article](docs/BLTOUCH-LK-SERIES-GUIDE.md) now documents the three researched motherboard families, a PWM timing illustration, connector depinning, alternative UART choices, beginning-to-end Marlin enablement, glass-bed testing, and recovery procedures. The [backup helper](tools/backup/README.md) supports guarded, repeat-verified **read-only** STM32CubeProgrammer/AVRDUDE operations, including ArduinoISP guidance and external Blue Pill debugger references. Eight hardware-free unit tests are included and run through GitHub Actions. **No printer firmware changes or real-hardware validation have occurred in this documentation/tooling work.**
