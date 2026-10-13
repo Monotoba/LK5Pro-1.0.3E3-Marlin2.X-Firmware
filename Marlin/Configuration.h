@@ -82,7 +82,7 @@
 #define LK5_PRO
 
 // uncomment to use z probe(BL-TOUCH/3D-TOUCH)
-// #define WITH_Z_PROBE
+#define WITH_Z_PROBE
 
 // test version label
 #define FW_TEST_TAG "T001"
@@ -1267,12 +1267,12 @@
 #if ENABLED(LK4X)
   #define NOZZLE_TO_PROBE_OFFSET { -50, -5, 0 }
 #elif ENABLED(LK5_PRO)
-  #define NOZZLE_TO_PROBE_OFFSET  { -54.8, -12.40, -1.00} // for dual blowers. Use values { -36, -10, 0 } if using sigle blower
+  #define NOZZLE_TO_PROBE_OFFSET { -45, -20, 0 } // Tested mount; measure your own X/Y, calibrate Z with M851
 #endif
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 80
+#define PROBING_MARGIN 30
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (135*60)
