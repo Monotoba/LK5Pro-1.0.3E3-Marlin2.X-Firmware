@@ -2,7 +2,7 @@
 
 Custom Marlin 2.0.x firmware for the Longer LK5 Pro with MKS Robin E3 v1.1 board.
 
-**Maintained by:** [DreadedZombie](https://github.com/DreadedZombie)
+**Original project:** [DreadedZombie](https://github.com/DreadedZombie) · **Field-tested BLTouch fork:** [Monotoba](https://github.com/Monotoba)
 
 ## Hardware Compatibility
 
@@ -17,7 +17,7 @@ Custom Marlin 2.0.x firmware for the Longer LK5 Pro with MKS Robin E3 v1.1 board
 - SD card printing
 
 **Optional Features (can be enabled):**
-- BLTouch/3D Touch auto bed leveling (uncomment `WITH_Z_PROBE` in Configuration.h line 85)
+- BLTouch/3D Touch auto bed leveling (**enabled in this fork**; check probe wiring and offsets before use)
 - Bilinear auto bed leveling (enabled when BLTouch is active)
 
 **Note:** This firmware is specifically configured for the newer LK5 Pro models with the MKS Robin E3 v1.1 board. If you have an older model with MKS Robin Nano v3.5, you'll need different firmware.
@@ -57,6 +57,13 @@ This custom firmware includes advanced Marlin 2.0 features not available in the 
 
 ## Build
 
+> **IMPORTANT — verified recovery lesson (October 2026):** The original upstream PlatformIO recipe also creates an XOR-transformed `Robin_e3.bin`. On the tested LK5 Pro with Robin E3 V1.1, writing that file after renaming it to `firmware.bin` completed the SD update but left the printer at the LONGER splash screen. Flashing the **raw** `firmware.bin`, linked at `0x08005000`, successfully started Marlin and the DWIN display. Always identify the exact PCB and bootloader first. Keep a proven recovery image. The repository's `FDM-LK5PRO-FW-1.0.3E3-BL-230905.zip` includes a raw `firmware.bin` reference; it is not the tested custom build.
+
+> **Installed probe offsets are mount-specific.** This fork enables `WITH_Z_PROBE`, uses `X=-45`, `Y=-20` mm for the tested bracket, and leaves compiled Z at `0` pending on-machine calibration. The tested printer's final saved EEPROM offset was `M851 Z-2.22`; **do not hard-code or copy that Z value to other machines**.
+
+For the hands-on installation, troubleshooting and Cura commands see [3D Touch installation and calibration](docs/3d-touch-installation.md).
+
+
 As the firmware is based on Marlin 2.0.x which is built on the core of PlatformIO, the build compiling steps are the same as Marlin 2.0.x. You can directly use [PlatformIO Shell Commands](https://docs.platformio.org/en/latest/core/installation.html#piocore-install-shell-commands), or use IDEs with built-in PlatformIO Core (CLI), for example, [VSCode](https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode) and [Atom](https://docs.platformio.org/en/latest/integration/ide/atom.html). VSCode is recommended.
 
 **Build command:**
@@ -73,7 +80,7 @@ This printer has **two separate firmwares** that can be updated independently:
 Updates the motherboard (MKS Robin E3 v1.1) with your custom Marlin firmware:
 
 1. Enter the `.pio\build\mks_robin_e3_maple` directory
-2. Rename `Robin_e3.bin` to `firmware.bin`
+2. **For the field-tested Longer LK5 Pro Robin E3 V1.1 bootloader, use the existing unencrypted `.pio/build/mks_robin_e3_maple/firmware.bin` directly. Do NOT rename the XOR-encoded `Robin_e3.bin`. This is bootloader-specific; other MKS boards may require encoded images.**
 3. Copy `firmware.bin` to the **root directory** of your SD card
 4. Insert the SD card into the motherboard
 5. Power on the printer - you should see the update interface
