@@ -57,6 +57,14 @@ This custom firmware includes advanced Marlin 2.0 features not available in the 
 
 ## Build
 
+### Illustrated installation manual (PDF)
+
+- **[Download the 11-page LK5 Pro 3D Touch / BLTouch Installation Manual](docs/LK5_Pro_3D_Touch_Installation_Manual.pdf)** — hardware identification, wiring, unencrypted STM32 firmware flashing, recovery, probe checks, Z-offset calibration, Cura setup, and first-layer testing.
+- [Read the GitHub Markdown installation guide](docs/3d-touch-installation.md).
+
+> The PDF is an accompanying field-tested manual for the MKS Robin E3 V1.1 version. Check board compatibility before following any flashing directions.
+
+
 > **IMPORTANT — verified recovery lesson (October 2026):** The original upstream PlatformIO recipe also creates an XOR-transformed `Robin_e3.bin`. On the tested LK5 Pro with Robin E3 V1.1, writing that file after renaming it to `firmware.bin` completed the SD update but left the printer at the LONGER splash screen. Flashing the **raw** `firmware.bin`, linked at `0x08005000`, successfully started Marlin and the DWIN display. Always identify the exact PCB and bootloader first. Keep a proven recovery image. The repository's `FDM-LK5PRO-FW-1.0.3E3-BL-230905.zip` includes a raw `firmware.bin` reference; it is not the tested custom build.
 
 > **Installed probe offsets are mount-specific.** This fork enables `WITH_Z_PROBE`, uses `X=-45`, `Y=-20` mm for the tested bracket, and leaves compiled Z at `0` pending on-machine calibration. The tested printer's final saved EEPROM offset was `M851 Z-2.22`; **do not hard-code or copy that Z value to other machines**.
